@@ -1,0 +1,1253 @@
+/* ==========================================================================
+   LOGIN PLATAFORMA - Nova Versão
+   ========================================================================== */
+
+/* Controle de Visibilidade - Esconder por padrão */
+.login-version-nova {
+    display: none;
+}
+
+/* Quando classe .login-plataforma-active está ativa no HTML, inverter */
+html.login-plataforma-active .login-version-antiga {
+    display: none !important;
+}
+
+html.login-plataforma-active .login-version-nova {
+    display: flex !important;
+    min-height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #343A3C -30%, #000000 50%, #343A3C 130%) !important;
+}
+
+@media (max-width: 768px) {
+    html.login-plataforma-active .login-version-nova {
+        padding: 40px 20px;
+    }
+}
+
+/* Background da página - remove do body na nova versão */
+html.login-plataforma-active body {
+    background: #000 !important;
+}
+
+/* Ocultar canvas de partículas da versão antiga */
+html.login-plataforma-active .login-canvas-particles {
+    display: none !important;
+}
+
+/* ==========================================================================
+   Background Container
+   ========================================================================== */
+.login-plataforma-background {
+    width: 100%;
+    background-size: contain;
+    position: relative;
+    padding: 90px 90px 0 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-bg-cabot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.login-bg-cabot > div {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.login-bg-cabot .bg-top-left {
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/theme/fiap/pix/login/bg/bg_top_left.png');
+    background-position: top left;
+}
+
+.login-bg-cabot .bg-top-right {
+    top: 50px;
+    right: 50px;
+    width: 300px;
+    height: 300px;
+    background-image: url('/theme/fiap/pix/login/bg/bg_top_right.png');
+    background-position: top right;
+}
+
+.login-bg-cabot .bg-bottom-left {
+    bottom: 50px;
+    left: 50px;
+    width: 300px;
+    height: 300px;
+    background-image: url('/theme/fiap/pix/login/bg/bg_bottom_left.png');
+    background-position: bottom left;
+}
+
+.login-bg-cabot .bg-bottom-right {
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/theme/fiap/pix/login/bg/bg_bottom_right.png');
+    background-position: bottom right;
+}
+
+.login-bg-cabot .bg-center-right {
+    top: 35%;
+    right: 50px;
+    width: 40px;
+    height: 300px;
+    background-image: url('/theme/fiap/pix/login/bg/bg_center_right.png');
+}
+
+/* ==========================================================================
+   Container Principal (Split-screen)
+   ========================================================================== */
+.login-plataforma-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    margin-top: 60px;
+}
+
+/* Logo FIAP Mobile */
+.login-plataforma-logo-mobile {
+    display: none;
+}
+@media (max-width: 900px) {
+    .login-plataforma-background {
+        padding: 25px 0 0 0 !important;
+    }
+}
+@media (max-width: 768px) {
+
+    .login-plataforma-logo-mobile {
+        display: block;
+        width: 100%;
+        padding: 30px 0px;
+        text-align: left;
+        order: -1;
+    }
+
+    .login-plataforma-logo-mobile svg {
+        width: auto;
+        height: 40px;
+    }
+
+    .login-plataforma-logo {
+        display: none;
+    }
+
+    .login-plataforma-container {
+        flex-direction: column;
+    }
+
+    .login-bg-cabot .bg-top-left, .login-bg-cabot .bg-bottom-left, .login-bg-cabot .bg-center-right{
+        display: none;
+    }
+
+    .login-bg-cabot .bg-top-right{
+        top: 30px;
+        right: 10px;
+    }
+    .login-bg-cabot .bg-bottom-right{
+        bottom: 30px;
+        right: 10px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+/* ==========================================================================
+   Lado Esquerdo: Hero Section
+   ========================================================================== */
+.login-plataforma-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    border-right: 1px solid #505050;
+}
+
+@media (max-width: 768px) {
+    .login-plataforma-hero {
+        padding: 0px 0px;
+        justify-content: flex-start;
+    }
+}
+
+.login-plataforma-hero-text {
+    color: #ed145b;
+    font-family: 'Gotham HTF LIGHT', sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0 150px 0 0;
+}
+
+.login-plataforma-hero-text span {
+    font-family: 'Gotham HTF Bold', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .login-plataforma-hero-text {
+        font-size: 36px;
+    }
+
+    .login-plataforma-container {
+        margin-top: 0px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-plataforma-hero-text {
+        font-size: 30px;
+        text-align: left;
+        margin: 0px;
+    }
+}
+
+/* ==========================================================================
+   Lado Direito: Formulário
+   ========================================================================== */
+.login-plataforma-form-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 30px 150px;
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    .login-plataforma-form-wrapper {
+        padding: 40px 0px;
+    }
+
+    .login-recovery-modal-hero-container {
+        padding: 0px !important;
+    }
+
+    .login-plataforma-field {
+        width: 100% !important;
+    }
+}
+
+.login-plataforma-form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ==========================================================================
+   Logo
+   ========================================================================== */
+.login-plataforma-logo {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.login-plataforma-logo svg {
+    height: 40px;
+    width: auto;
+    fill: #fff;
+}
+
+.login-plataforma-logo img {
+    max-width: 100%;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   Campos do Formulário
+   ========================================================================== */
+.login-plataforma-field {
+    margin-bottom: 24px;
+    width: 303px;
+}
+
+.login-plataforma-label {
+    color: #B7B7B7;
+    display: block;
+    font-family: 'Gotham HTF Medium', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.login-plataforma-input {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ACC1CC;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 15px;
+    height: 50px;
+    outline: none;
+    padding: 0 16px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.login-plataforma-input:focus {
+    border-color: #ed145b;
+}
+
+.login-plataforma-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Forçar padrão de estilo no autofill do Chrome - Solução Completa */
+.login-plataforma-input:-webkit-autofill,
+.login-plataforma-input:-webkit-autofill:hover,
+.login-plataforma-input:-webkit-autofill:focus,
+.login-plataforma-input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ACC1CC !important;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #ACC1CC !important;
+    caret-color: #ACC1CC !important;
+}
+
+.login-plataforma-input:-webkit-autofill {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.login-plataforma-input:-webkit-autofill:focus {
+    border-color: #ed145b !important;
+}
+
+/* Seletor interno do Chrome para autofill */
+.login-plataforma-input:-internal-autofill-selected {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #ACC1CC !important;
+    -webkit-text-fill-color: #ACC1CC !important;
+}
+
+input:-internal-autofill-selected {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #ACC1CC !important;
+}
+
+.login-plataforma-password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-plataforma-toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: opacity 0.2s;
+    top: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.login-plataforma-toggle-password:hover {
+    opacity: 0.7;
+}
+
+.login-plataforma-toggle-password svg {
+    width: 18px;
+    height: 16px;
+}
+
+/* ==========================================================================
+   Botão
+   ========================================================================== */
+.login-plataforma-actions {
+    margin-bottom: 16px;
+}
+
+.login-plataforma-btn {
+    background: transparent;
+    border: 1px solid #505050;
+    color: #505050;
+    cursor: not-allowed;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 100%;
+    -webkit-appearance: none;
+    margin-top: 20px;
+}
+
+.login-plataforma-btn:disabled {
+    opacity: 1;
+}
+
+/* Estilo do botão ativado */
+.login-plataforma-btn:not(:disabled) {
+    background: transparent;
+    border: 1px solid #ed145b;
+    color: #ed145b;
+    cursor: pointer;
+}
+
+.login-plataforma-btn:not(:disabled):hover {
+    background: #ed145b;
+    color: #1c1c1c;
+}
+
+/* Estilo do botão carregando */
+.login-plataforma-btn.is-loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Link "Esqueci minha senha"
+   ========================================================================== */
+.login-plataforma-link-wrapper {
+    text-align: left;
+    margin-top: 40px
+}
+
+.login-plataforma-link {
+    color: #75838B;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: underline;
+    text-decoration-color: #75838b8c;
+    transition: color 0.3s;
+}
+
+.login-plataforma-link:hover {
+    color: #ed145b;
+}
+
+.login-plataforma-link[type="button"] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* ==========================================================================
+   Modal de Recuperação de Senha
+   ========================================================================== */
+.login-recovery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.login-recovery-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-recovery-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.login-recovery-modal-content {
+    position: relative;
+    z-index: 1001;
+    background: #1C1C1C;
+    width: 1346px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.login-recovery-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    transition: opacity 0.2s;
+    z-index: 10;
+    color: #ED145B;
+    font-size: 10px;
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: 500;
+    width: 75px;
+}
+
+.login-recovery-modal-close:hover {
+    opacity: 0.7;
+}
+
+.login-recovery-modal-container {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px 50px 20px 50px;
+}
+
+.login-recovery-modal-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0px;
+    border-right: 1px solid #505050;
+    align-items: flex-end;
+}
+
+.login-recovery-modal-hero-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 72px 0 0;
+}
+
+.login-recovery-modal-title {
+    color: #ed145b;
+    font-family: 'Gotham HTF LIGHT', sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin: 0 0 24px 0px;
+}
+
+.login-recovery-modal-title span {
+    font-weight: 700;
+    font-family: 'Gotham HTF BOLD', sans-serif;
+}
+
+.login-recovery-modal-text {
+    color: #B7B7B7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 0px 0px;
+}
+
+.login-recovery-modal-text span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.login-recovery-modal-form-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 60px 72px;
+    background: transparent;
+}
+
+.login-recovery-modal-form-container {
+    width: 100%;
+    max-width: 320px;
+}
+
+.login-recovery-modal-logo {
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.login-recovery-modal-logo svg {
+    width: auto;
+    height: 40px;
+}
+
+.login-recovery-modal-field {
+    width: 303px;
+}
+
+.login-recovery-modal-label {
+    display: block;
+    color: #B7B7B7;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.login-recovery-modal-input {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ACC1CC;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 14px;
+    height: 50px;
+    outline: none;
+    padding: 0 16px;
+    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-recovery-modal-input:focus {
+    border-color: #ed145b;
+}
+
+.login-recovery-modal-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Forçar padrão de estilo no autofill do Chrome - Solução Completa */
+.login-recovery-modal-input:-webkit-autofill,
+.login-recovery-modal-input:-webkit-autofill:hover,
+.login-recovery-modal-input:-webkit-autofill:focus,
+.login-recovery-modal-input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ACC1CC !important;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #ACC1CC !important;
+    caret-color: #ACC1CC !important;
+}
+
+.login-recovery-modal-input:-webkit-autofill {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.login-recovery-modal-input:-webkit-autofill:focus {
+    border-color: #ed145b !important;
+}
+
+/* Seletor interno do Chrome para autofill */
+.login-recovery-modal-input:-internal-autofill-selected {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #ACC1CC !important;
+    -webkit-text-fill-color: #ACC1CC !important;
+}
+
+.login-recovery-modal-input.error {
+    border-color: #ED145B;
+}
+
+.login-recovery-modal-error {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: #ED145B;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.login-recovery-modal-recaptcha {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-recovery-modal-btn {
+    background: transparent;
+    border: 1px solid #505050;
+    color: #373737;
+    cursor: not-allowed;
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.login-recovery-modal-btn:not(:disabled) {
+    background: transparent;
+    border: 1px solid #ed145b;
+    color: #ed145b;
+    cursor: pointer;
+}
+
+.login-recovery-modal-btn:not(:disabled):hover {
+    background: #ed145b;
+    color: #1c1c1c;
+}
+
+.login-recovery-modal-footer-link {
+    text-align: left;
+    color: #75838B;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.login-recovery-modal-link {
+    color: #ed145b;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.login-recovery-modal-link:hover {
+    opacity: 0.8;
+}
+
+.login-recovery-modal-footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.login-recovery-modal-footer p {
+    color: #505050;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+}
+
+.login-recovery-modal-footer p:last-child {
+    margin: 0;
+}
+
+.login-recovery-modal-footer-contact {
+    color: #75838B !important;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.login-recovery-modal-footer-contact:hover {
+    color: #ED145B !important;
+}
+
+.login-recovery-modal-footer-contact svg {
+    width: 16px;
+    height: 16px;
+}
+
+.login-recovery-modal-footer-contact a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Mensagem de Sucesso
+   ========================================================================== */
+.login-recovery-modal-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    flex: 1;
+}
+
+.login-recovery-modal-success.active {
+    display: flex !important;
+}
+
+.login-recovery-modal-success-icon {
+    margin-bottom: 24px;
+}
+
+.login-recovery-modal-success-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.login-recovery-modal-success-title {
+    color: #00C365;
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+}
+
+.login-recovery-modal-success-text {
+    color: #00C365;
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+}
+
+.login-recovery-modal-resend-text {
+    color: #75838B;
+    font-family: 'Ghotan HTF Book', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+}
+
+.login-recovery-modal-resend-link {
+    color: #ED145B;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.login-recovery-modal-resend-link:hover {
+    color: #ff6b8a;
+    text-decoration: underline;
+}
+
+.login-recovery-modal-success-btn {
+    background: transparent;
+    border: 1px solid #00C365;
+    color: #00C365;
+    cursor: pointer;
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    padding: 0;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 280px;
+}
+
+.login-recovery-modal-success-btn:hover {
+    background: #00C365;
+    color: #1c1c1c;
+}
+
+.login-recovery-modal-resend-info {
+    color: #B7B7B7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+.login-recovery-modal-resend-success-text {
+    color: #B7B7B7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+/* ==========================================================================
+   Mensagem de Reenvio com Sucesso
+   ========================================================================== */
+.login-recovery-modal-resend-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    flex: 1;
+}
+
+.login-recovery-modal-resend-success.active {
+    display: flex !important;
+}
+
+/* ==========================================================================
+   Mensagem de Erro
+   ========================================================================== */
+.login-recovery-modal-error-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    flex: 1;
+}
+
+.login-recovery-modal-error-message.active {
+    display: flex !important;
+}
+
+.login-recovery-modal-error-icon {
+    margin-bottom: 24px;
+}
+
+.login-recovery-modal-error-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.login-recovery-modal-error-title {
+    color: #FF453A;
+    font-family: 'Gotham HTF Bold', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+}
+
+.login-recovery-modal-error-text {
+    color: #FF453A;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+}
+
+.login-recovery-modal-error-btn {
+    background: transparent;
+    border: 1px solid #FF453A;
+    color: #FF453A;
+    cursor: pointer;
+    font-family: 'Gotham HTF Bold', sans-serif;
+    font-size: 12px;
+    height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    padding: 0;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 280px;
+}
+
+.login-recovery-modal-error-btn:hover {
+    background: #FF453A;
+    color: #1c1c1c;
+}
+
+@media (max-width: 1024px) {
+    .login-recovery-modal-content {
+        width: 85vw;
+        height: 80vh;
+    }
+}
+
+/* Header Mobile */
+.login-recovery-modal-header {
+    display: none;
+}
+
+.login-recovery-modal-back {
+    background: none;
+    border: none;
+    color: #ED145B;
+    cursor: pointer;
+    font-family: 'Gotham HTF Book', sans-serif;
+    font-size: 12px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-recovery-modal-back svg {
+    width: 20px;
+    height: 20px;
+}
+
+.login-recovery-modal-header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.login-recovery-modal-header-logo svg {
+    width: 80px;
+    height: auto;
+}
+
+@media (max-width: 1550px) {
+    .login-plataforma-hero-text{
+        font-size:45px !important
+    }
+}
+@media (max-width: 1390px) {
+    .login-plataforma-hero-text{
+        font-size:30px !important
+    }
+}
+@media (max-width: 1280px) {
+    .login-plataforma-hero{
+        border-right: none !important;
+    }
+    .login-plataforma-hero-text{
+        margin: 0px !important;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-recovery-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 20px;
+        background-color: #101010;
+    }
+
+    .login-plataforma-btn {
+        font-size: 12px;
+    }
+
+    .login-recovery-modal-close {
+        display: none;
+    }
+
+    .login-recovery-modal-content {
+        width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .login-recovery-modal-btn{
+        font-size: 12px !important;
+    }
+
+    .login-recovery-modal-container {
+        flex-direction: column;
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 24px 16px;
+        box-sizing: border-box;
+        justify-content: flex-start;
+    }
+
+    .login-recovery-modal-hero {
+        border-right: none;
+        border-bottom: none;
+        padding: 40px 0 40px 0;
+        flex: none;
+        min-height: auto;
+        align-items: flex-start;
+    }
+
+
+    .login-recovery-modal-form-wrapper {
+        padding: 0 0px;
+        flex: none;
+        justify-content: inherit;
+        box-sizing: border-box;
+    }
+
+    .login-recovery-modal-form-container {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .login-recovery-modal-field {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .login-recovery-modal-success-title,
+    .login-recovery-modal-success-text {
+        font-size: 16px;
+    }
+
+    .login-recovery-modal-success-btn {
+        font-size: 12px;
+    }
+
+    .login-recovery-modal-footer-contact {
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: 400;
+        font-size: 14px !important;
+        justify-content: flex-start;
+        color: #ED145B !important;
+    }
+
+    /* Quando as mensagens de sucesso, erro ou reenvio estão ativas, alterar footer */
+    .login-recovery-modal-success.active~.login-recovery-modal-footer .login-recovery-modal-footer-contact,
+    .login-recovery-modal-resend-success.active~.login-recovery-modal-footer .login-recovery-modal-footer-contact,
+    .login-recovery-modal-error-message.active~.login-recovery-modal-footer .login-recovery-modal-footer-contact {
+        justify-content: center;
+        color: #75838B !important;
+    }
+
+    .login-recovery-modal-title {
+        font-size: 30px;
+        margin: 0px 0px 16px 0px;
+    }
+
+    .login-recovery-modal-text {
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    .login-recovery-modal-logo {
+        display: none;
+    }
+
+    .login-recovery-modal-footer {
+        flex-shrink: 0;
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+}
+
+/* ==========================================================================
+   Rodapé com Suporte
+   ========================================================================== */
+.login-plataforma-footer {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .login-plataforma-footer {
+        padding: 15px 10px;
+    }
+
+    .login-plataforma-footer p:first-child,
+    .login-recovery-modal-footer p:first-child {
+        display: none;
+    }
+
+    .login-plataforma-footer-contact {
+        justify-content: flex-start !important;
+        color: #ED145B !important;
+    }
+}
+
+.login-plataforma-footer p {
+    color: #505050;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 8px 0;
+}
+
+.login-plataforma-footer-contact {
+    color: #75838B !important;
+    font-family: 'Roboto', sans-serif !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.login-plataforma-footer-contact:hover {
+    color: #ED145B !important;
+}
+
+.login-plataforma-footer-contact a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.login-plataforma-footer-contact svg {
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Mensagem de Erro
+   ========================================================================== */
+.login-plataforma-error {
+    background: rgba(237, 20, 91, 0.2);
+    border: 1px solid #ed145b;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Gotham HTF Medium', sans-serif;
+    font-size: 13px;
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Canvas de Partículas (compatibilidade)
+   ========================================================================== */
+.login-plataforma-container .login-canvas-particles {
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/* ==========================================================================
+   Loading Spinner - Animation
+   ========================================================================== */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-loading-icon {
+    display: inline-block;
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+}
+
+.btn-loading-icon.hidden {
+    display: none;
+}
